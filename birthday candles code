@@ -1,0 +1,31 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Enter number of candles: ";
+    cin >> n;
+
+    vector<int> candles(n);
+    cout << "Enter candle heights: ";
+    for (int i = 0; i < n; i++) {
+        cin >> candles[i];
+    }
+
+    int maxHeight = candles[0];
+    for (int i = 1; i < n; i++) {
+        if (candles[i] > maxHeight)
+            maxHeight = candles[i];
+    }
+
+    int count = 0;
+    for (int i = 0; i < n; i++) {
+        if (candles[i] == maxHeight)
+            count++;
+    }
+
+    cout << "Number of tallest candles: " << count << endl;
+
+    return 0;
+}
